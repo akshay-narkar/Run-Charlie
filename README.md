@@ -1,65 +1,69 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Run Charlie
 
-# Project Name
+A runner game built in JavaScript with the Phaser Library bundled with Webpack and transpilied with Babel
 
-> One paragraph statement about the project.
+## Run Charlie screenshot
 
-![screenshot](./app_screenshot.png)
+<!-- <img src="/src/screenshot.png"/> -->
+<!--
+In this project we build a Weather app with vanilla javascript & webpack where you can:
 
-Additional description about the project and its features.
+- Input City name
+- Get weather details
+- Toggle the Temperature unit -->
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
+- Webpack
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+<!-- Get Api Key
 
+- Go to openweathermap
+- Select free Api key
+- Create an account if you dont have one
+- Copy your new Api Key
+- Go to src/logic.js
+- Create a new file with the name `key.js`
+- Paste the following code & replace `YOUR KEY` text with your api key
+  `const key = 'YOUR KEY'; export default key;` -->
 
-To get a local copy up and running follow these simple example steps.
+To set up a local copy of the project
 
-### Prerequisites
+- `git clone git@github.com:akshay-narkar/Run-Charlie.git`
+- `cd Run-Charlie`
+- `git pull origin feature`
 
-### Setup
+If you want to repack the file
 
-### Install
+- Run `npm install` on the terminal to install dependancies
+- Run `npm run build` to bundle the files in the src folder & product ouput in dist folder
+- Run `npm run start` to check live server
 
-### Usage
+  or
 
-### Run tests
+- Go to the dist folder and open index.html
 
-### Deployment
+## Live Link of the project
 
+<!-- [Live-Weather-App](https://openweatherappmicro.netlify.app/) -->
 
+## Author
 
-## Authors
+👤 **Akshay Narkar**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [@akshay-narkar](https://github.com/akshay-narkar)
+- Twitter: [Akshay](https://www.twitter.com/akidoit)
+- Linkedin: [Akshay Narkar](https://www.linkedin.com/in/akshaynarkar25/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -67,10 +71,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks to Odin project for the tutorials.
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](LICENSE) licensed.

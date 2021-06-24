@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -38,12 +36,12 @@ module.exports = {
         // ],
       },
 
-       {
-            test: [ /\.vert$/, /\.frag$/ ],
-            use: 'raw-loader'
-          },
-      
-          {
+      {
+        test: [/\.vert$/, /\.frag$/],
+        use: 'raw-loader',
+      },
+
+      {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src/'),
         use: {
@@ -52,10 +50,10 @@ module.exports = {
             // presets: ['env']
             // @babel/preset-env
             presets: [
-                  "@babel/preset-env"
-                       ]
-          }
-        }
+              '@babel/preset-env',
+            ],
+          },
+        },
       },
 
       {
@@ -68,29 +66,28 @@ module.exports = {
     ],
   },
 
+  plugins: [
 
-   plugins: [
-
-     new CopyWebpackPlugin({
+    new CopyWebpackPlugin({
       patterns: [
         {
-        from: path.resolve(__dirname, 'index.html'),
-        to: path.resolve(__dirname, 'dist')
-      },
-      {
-        from: path.resolve(__dirname, 'assets', '**', '*'),
-        to: path.resolve(__dirname, 'dist')
-      }]
-     }),
-      
+          from: path.resolve(__dirname, 'index.html'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+        {
+          from: path.resolve(__dirname, 'assets', '**', '*'),
+          to: path.resolve(__dirname, 'dist'),
+        }],
+    }),
+
     //  new webpack.optimize.SplitChunksPlugin({
     //   name: 'production-dependencies',
     //   filename: 'production-dependencies.bundle.js'
     // }),
-   
+
     new webpack.DefinePlugin({
       'typeof CANVAS_RENDERER': JSON.stringify(true),
-      'typeof WEBGL_RENDERER': JSON.stringify(true)
-    })
+      'typeof WEBGL_RENDERER': JSON.stringify(true),
+    }),
   ],
 };

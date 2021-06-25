@@ -1,24 +1,40 @@
 # Run Charlie
 
-A runner game built in JavaScript with the Phaser Library bundled with Webpack and transpilied with Babel
+An endless runner game built in JavaScript with the Phaser Library, bundled with Webpack and transpilied with Babel.
 
 ## Run Charlie screenshot
 
-<!-- <img src="/src/screenshot.png"/> -->
-<!--
-In this project we build a Weather app with vanilla javascript & webpack where you can:
+### Main Menu
 
-- Input City name
-- Get weather details
-- Toggle the Temperature unit -->
+<img src="./assets/title.png" width="65%"/>
+
+### In Game
+
+<img src="./assets/charlie.png" width="65%"/>
+
+#### [Game Design Document](./GDD.md)
+
+## Instructions
+
+- Play with the Mouse Click:
+
+- MOUSE KEY/TOUCH PAD CLICK TO JUMP
+
+- Press multiple times (maximum 3) to make a triple jump.
+
+- Jumps exhaust when 3 jumps are done and you haven't touched the platform
+
+- On touching the platform, the jumps are replenished.
 
 ## Built With
 
-- JavaScript
 - HTML
-- CSS
-- Bootstrap
-- Webpack
+- JAVASCRIPT
+- PHASER 3
+- NPM
+- WEBPACK
+- Babel
+- JEST
 
 ## Getting Started
 
@@ -37,17 +53,13 @@ To set up a local copy of the project
 
 - `git clone git@github.com:akshay-narkar/Run-Charlie.git`
 - `cd Run-Charlie`
-- `git pull origin feature`
+- `git pull origin gamelogic`
 
 If you want to repack the file
 
 - Run `npm install` on the terminal to install dependancies
 - Run `npm run build` to bundle the files in the src folder & product ouput in dist folder
 - Run `npm run start` to check live server
-
-  or
-
-- Go to the dist folder and open index.html
 
 ## Live Link of the project
 
@@ -71,7 +83,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Thanks to Odin project for the tutorials.
+- [Open Game Art](http://opengameart.org/)
+- [upklyak](https://www.freepik.com/free-photos-vectors/leaf)
 
 ## 📝 License
 

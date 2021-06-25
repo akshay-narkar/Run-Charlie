@@ -36,7 +36,7 @@ Let's see how far you can take Charlie on his journey!
 
 #### Game screeshot:
 
-![screenshot](../src/assets/game.PNG)
+<img src="./assets/charlie.png" width="65%"/>
 
 #### Controls
 

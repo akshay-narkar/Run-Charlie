@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 import './stylesheet.css';
 import gameConfig from './Config/config';
-import playGame from './Scenes/GameScene';
+import playGame from './Scenes/GameScene2';
 import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
@@ -34,11 +34,3 @@ class Game extends Phaser.Game {
 }
 
 window.game = new Game();
-
-// const gameConfig = {
-//   width: 680,
-//   height: 400,
-//   scene: SimpleScene
-// };
-
-// new Phaser.Game(gameConfig);

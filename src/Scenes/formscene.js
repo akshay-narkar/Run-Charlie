@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { setplayer } from '../helper/localstorage';
 
 export default class FormScene extends Phaser.Scene {
   constructor() {
@@ -6,19 +7,16 @@ export default class FormScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(2500,1080,'mount');
+    this.add.image(2500, 1080, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 128, 'Run Charlie!', {
       fontFamily: 'FreeMono',
       fontSize: 48,
       fontStyle: 'bold',
       color: '#ffffff',
-      // align: 'center',
     });
 
-    // this.title.setOrigin(0.5);
-
-     this.model = this.sys.game.globals.model;
+    this.model = this.sys.game.globals.model;
     //  && this.model.bgMusicPlaying === false
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
       this.bgMusic = this.sound.add('title', { volume: 0.3, loop: true });
@@ -41,10 +39,7 @@ export default class FormScene extends Phaser.Scene {
 
     const canvas1 = document.querySelector('canvas');
 
-    // this.input = this.add.dom(400, 400).createFromCache('nameform');
-    // this.newinput = this.add.dom(400,400).createElement('input');
     this.input = this.body.appendChild(document.createElement('input'));
-    // this.input.setScale(2)
     this.add.dom(canvas1.clientWidth / 2, canvas1.clientHeight / 2, this.input);
     this.input.setAttribute('id', 'myText');
     this.input.setAttribute('type', 'text');
@@ -59,9 +54,8 @@ export default class FormScene extends Phaser.Scene {
     this.submit.on('pointerdown', () => {
       if (/[a-z]/i.test(this.input.value)) {
         this.scene.start('Title');
-        // this.input.style.display = 'none';
 
-        localStorage.setItem('player', this.input.value);
+        setplayer(this.input.value);
       }
     });
   }

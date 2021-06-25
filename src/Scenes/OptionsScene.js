@@ -7,20 +7,32 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
-                this.add.image(780,1080,'mount');
+    this.add.image(780, 1080, 'mount');
 
     this.model = this.sys.game.globals.model;
 
-    this.text = this.add.text(this.game.config.width / 2 - 125, 100, 'Options', { fontSize: 60, fontFamily: 'FreeMono',fontStyle: 'bold',
-              color: '#000' });
+    this.text = this.add.text(this.game.config.width / 2 - 125, 100, 'Options', {
+      fontSize: 60,
+      fontFamily: 'FreeMono',
+      fontStyle: 'bold',
+      color: '#000',
+    });
     this.musicButton = this.add.image(this.game.config.width / 2 - 150, 300, 'soundon');
     this.musicButton.setScale(0.8);
-    this.musicText = this.add.text(this.game.config.width / 2 - 60, 280, 'Music Enabled', { fontSize: 40, fontFamily: 'FreeMono',fontStyle: 'bold',
-              color: '#000', });
+    this.musicText = this.add.text(this.game.config.width / 2 - 60, 280, 'Music Enabled', {
+      fontSize: 40,
+      fontFamily: 'FreeMono',
+      fontStyle: 'bold',
+      color: '#000',
+    });
 
     this.soundButton = this.add.image(this.game.config.width / 2 - 150, 400, 'soundon');
-    this.soundText = this.add.text(this.game.config.width / 2 - 60, 380, 'Sound Enabled', { fontSize: 40, fontFamily: 'FreeMono',fontStyle: 'bold',
-              color: '#000', });
+    this.soundText = this.add.text(this.game.config.width / 2 - 60, 380, 'Sound Enabled', {
+      fontSize: 40,
+      fontFamily: 'FreeMono',
+      fontStyle: 'bold',
+      color: '#000',
+    });
     this.soundButton.setScale(0.8);
 
     this.musicButton.setInteractive();

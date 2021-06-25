@@ -10,14 +10,12 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
-    // add logo image
-        this.add.image(1920,1080,'mount');
+    this.add.image(1920, 1080, 'mount');
 
     const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
 
     logo.setScale(0.7);
 
-    // display progress bar
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.4);
@@ -58,7 +56,6 @@ export default class PreloaderScene extends Phaser.Scene {
     });
     assetText.setOrigin(0.5, 0.5);
 
-    // update progress bar
     const widthgame = this.game.config.width / 2 - 150;
     this.load.on('progress', (value) => {
       percentText.setText(`${parseInt(value * 100, 10)}%`);
@@ -67,12 +64,10 @@ export default class PreloaderScene extends Phaser.Scene {
       progressBar.fillRect(widthgame, 280, 300 * value, 30);
     });
 
-    // update file progress text
     this.load.on('fileprogress', (file) => {
       assetText.setText(`Loading asset: ${file.key}`);
     });
 
-    // remove progress bar when complete
     this.load.on('complete', () => {
       progressBar.destroy();
       progressBox.destroy();
@@ -84,7 +79,8 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    // load assets needed in our game
+    this.load.image('platform', './assets/platform.png');
+
     this.load.spritesheet('player', './assets/bunny.png', {
       frameWidth: 48,
       frameHeight: 32,
@@ -109,10 +105,9 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.load.image('playButton', './assets/ui/blue_button.png');
 
-
     this.load.image('playButtongreen', './assets/ui/button.png');
     this.load.image('soundon', './assets/ui/sound.png');
-    
+
     this.load.image('soundoff', './assets/ui/nosound.png');
     this.load.image('phaserLogo', './assets/logo.png');
     this.load.image('box', './assets/ui/grey_box.png');
@@ -121,7 +116,39 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('ingame', ['./assets/them1.ogg']);
     this.load.audio('highscores', ['./assets/WindRun.mp3']);
     this.load.audio('title', ['./assets/titleandgamover.mp3']);
+  }
 
+  create() {
+    this.anims.create({
+      key: 'run',
+      frames: this.anims.generateFrameNumbers('player', {
+        start: 0,
+        end: 3,
+      }),
+      frameRate: 15,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'rotate',
+      frames: this.anims.generateFrameNumbers('coin', {
+        start: 0,
+        end: 2,
+      }),
+      frameRate: 8,
+      yoyo: true,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'burn',
+      frames: this.anims.generateFrameNumbers('fire', {
+        start: 0,
+        end: 3,
+      }),
+      frameRate: 15,
+      repeat: -1,
+    });
   }
 
   ready() {

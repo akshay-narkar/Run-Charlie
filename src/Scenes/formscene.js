@@ -6,6 +6,8 @@ export default class FormScene extends Phaser.Scene {
   }
 
   create() {
+    this.add.image(2500,1080,'mount');
+
     this.add.text(this.game.config.width / 2 - 175, 128, 'Run Charlie!', {
       fontFamily: 'FreeMono',
       fontSize: 48,
@@ -15,6 +17,15 @@ export default class FormScene extends Phaser.Scene {
     });
 
     // this.title.setOrigin(0.5);
+
+     this.model = this.sys.game.globals.model;
+    //  && this.model.bgMusicPlaying === false
+    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+      this.bgMusic = this.sound.add('title', { volume: 0.3, loop: true });
+      this.bgMusic.play();
+      this.model.bgMusicPlaying = true;
+      this.sys.game.globals.bgMusic = this.bgMusic;
+    }
 
     this.message = this.add.text(this.game.config.width * 0.5, 228, 'Input Player Name', {
       fontFamily: 'monospace',

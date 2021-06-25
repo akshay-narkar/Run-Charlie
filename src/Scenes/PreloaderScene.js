@@ -11,6 +11,8 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     // add logo image
+        this.add.image(1920,1080,'mount');
+
     const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
 
     logo.setScale(0.7);
@@ -100,20 +102,26 @@ export default class PreloaderScene extends Phaser.Scene {
       startFrame: 12,
     });
 
-    this.load.spritesheet('mountain', './assets/ui/mountain.png', {
+    this.load.spritesheet('mountain', './assets/mountain.png', {
       frameWidth: 512,
       frameHeight: 512,
     });
 
     this.load.image('playButton', './assets/ui/blue_button.png');
 
+
     this.load.image('playButtongreen', './assets/ui/button.png');
     this.load.image('soundon', './assets/ui/sound.png');
+    
     this.load.image('soundoff', './assets/ui/nosound.png');
     this.load.image('phaserLogo', './assets/logo.png');
     this.load.image('box', './assets/ui/grey_box.png');
     this.load.image('checkedBox', './assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', ['./assets/TownTheme.mp3']);
+    // this.load.audio('bgMusic2', ['./assets/TownTheme.mp3']);
+    this.load.audio('ingame', ['./assets/them1.ogg']);
+    this.load.audio('highscores', ['./assets/WindRun.mp3']);
+    this.load.audio('title', ['./assets/titleandgamover.mp3']);
+
   }
 
   ready() {

@@ -7,7 +7,13 @@ export default class highscore extends Phaser.Scene {
     super('highscore');
   }
 
+
+
   create() {
+  
+                  this.add.image(780,1080,'mount');
+
+  
     this.add.text(this.game.config.width / 2 - 175, 25, 'LeaderBoard', {
       fontFamily: 'FreeMono',
       fontSize: 60,
@@ -15,6 +21,21 @@ export default class highscore extends Phaser.Scene {
       color: '#ffffff',
       // align: 'center',
     });
+
+
+
+     this.model = this.sys.game.globals.model;
+    if(this.model.bgMusicPlaying){
+           this.sys.game.globals.bgMusic.stop()
+          this.model.bgMusicPlaying = false}
+    
+    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+      this.bgMusic = this.sound.add('highscores', { volume: 0.3, loop: true });
+      this.bgMusic.play();
+      this.model.bgMusicPlaying = true;
+      this.sys.game.globals.bgMusic = this.bgMusic;
+    }
+  
 
     this.menuButton = new Button(this, this.game.config.width / 2, 750, 'playButtongreen', 'Menu', 'Title');
 
@@ -40,7 +61,7 @@ export default class highscore extends Phaser.Scene {
               fontFamily: 'monospace',
               fontSize: 30,
               fontStyle: 'bold',
-              color: '#ffffff',
+              color: '#000',
               align: 'center',
             },
           );

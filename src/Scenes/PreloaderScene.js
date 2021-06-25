@@ -94,7 +94,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.spritesheet("fire", "./assets/32x32-bat-sprite.png", {
       frameWidth: 32,
       frameHeight: 32,
-      startFrame: 12,
     });
 
     this.load.spritesheet("mountain", "./assets/mountain.png", {
@@ -111,10 +110,9 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image("phaserLogo", "./assets/logo.png");
     this.load.image("box", "./assets/ui/grey_box.png");
     this.load.image("checkedBox", "./assets/ui/blue_boxCheckmark.png");
-    // this.load.audio('bgMusic2', ['./assets/TownTheme.mp3']);
     this.load.audio("ingame", ["./assets/them1.ogg"]);
     this.load.audio("highscores", ["./assets/WindRun.mp3"]);
-    this.load.audio("titlesong", ["./assets/titleandgamover.mp3"]);
+    // this.load.audio("titlesong", ["./assets/titleandgamover.mp3"]);
   }
 
   create() {

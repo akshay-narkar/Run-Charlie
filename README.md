@@ -6,11 +6,11 @@ An endless runner game built in JavaScript with the Phaser Library, bundled with
 
 ### Main Menu
 
-<img src="./assets/title.png" width="65%"/>
+<img src="./assets/menu.png"/>
 
 ### In Game
 
-<img src="./assets/charlie.png" width="65%"/>
+<img src="./assets/charlie.png"/>
 
 #### [Game Design Document](./GDD.md)
 

@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "webpack serve --open --mode=development",
     "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=development"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

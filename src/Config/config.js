@@ -8,7 +8,7 @@ export default {
   //     mode: Phaser.Scale.NONE,
   // autoCenter: Phaser.Scale.CENTER_BOTH,
   // scene: playGame,
-  backgroundColor: 0x87CEEB,
+  // backgroundColor: 0x87CEEB,
   // antialias: false,
   // physics settings
   physics: {

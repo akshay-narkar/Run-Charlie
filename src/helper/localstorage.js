@@ -2,7 +2,7 @@ export const setplayer = (name) => {
   localStorage.setItem('player', name);
 };
 
-function highscore(points) {
+export function highscore(points) {
   if (localStorage.getItem('highscore')) {
     if (localStorage.getItem('highscore') < points) localStorage.setItem('highscore', points);
   } else {

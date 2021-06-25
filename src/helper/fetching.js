@@ -8,8 +8,9 @@ const getData = async (url) => {
   }
 };
 
-const sortPlayers = (arr) => {
+export const sortPlayers = (arr) => {
   arr.sort((a, b) => b.score - a.score);
+  return arr;
 };
 
 const getPlayers = async (url) => {

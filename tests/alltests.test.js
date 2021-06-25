@@ -3,6 +3,8 @@
  */
 
 import Model from '../src/Model';
+import { setplayer, highscore, getscore } from '../src/helper/localstorage';
+import { sortPlayers } from '../src/helper/fetching';
 
 let model1;
 let model2;
@@ -49,5 +51,47 @@ describe('Test Sound model', () => {
   test('Set Music On', () => {
     expect((model3.musicOn = false)).toBe(false);
     expect(model3.musicOn).not.toBe(true);
+  });
+});
+
+describe('Local Storage Tests', () => {
+  setplayer('adam');
+
+  test('Set the key player to a particular value', () => {
+    expect(localStorage.getItem('player')).toBe('adam');
+
+    expect(localStorage.getItem('player')).not.toBe('XYZ');
+  });
+
+  test('Set the score if the key-player is in localStorage', () => {
+    getscore(100);
+    expect(parseInt(localStorage.getItem('score'), 10)).toBe(100);
+
+    expect(localStorage.getItem('score')).not.toBe('XYZ');
+  });
+
+  test('Set the score if the key-player is in localStorage', () => {
+    highscore(100);
+    expect(parseInt(localStorage.getItem('highscore'), 10)).toBe(100);
+
+    expect(localStorage.getItem('highscore')).not.toBe(200);
+  });
+});
+
+describe('Sorting test', () => {
+  test('test for sorting array of objects in desc order', () => {
+    const arr = [
+      { username: 'a', score: 50 },
+      { username: 'b', score: 250 },
+      { username: 'c', score: 20 },
+      { username: 'd', score: 120 },
+    ];
+    const sortarr = [
+      { username: 'b', score: 250 },
+      { username: 'd', score: 120 },
+      { username: 'a', score: 50 },
+      { username: 'c', score: 20 },
+    ];
+    expect(sortPlayers(arr)).toEqual(sortarr);
   });
 });

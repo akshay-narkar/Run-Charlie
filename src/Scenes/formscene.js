@@ -17,7 +17,6 @@ export default class FormScene extends Phaser.Scene {
     });
 
     this.model = this.sys.game.globals.model;
-    //  && this.model.bgMusicPlaying === false
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
       this.bgMusic = this.sound.add("titlesong", { volume: 0.3, loop: true });
       this.bgMusic.play();

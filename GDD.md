@@ -101,7 +101,7 @@ The first version of the project was develpoment in 6 days following this milest
 - Day 1: Learn about Phaser 3, read Phaser documentation and following examples
 - Day 2: Desiging the Game, Create a story for the game and search all the assets
 - Day 3: Code Game Basis, prepare the game scenes and make the player able to move
-- Day 4: Create objects to collect, create obstacles in the game scene, add scoring and effects on collison.
+- Day 4: Create objects to collect, create obstacles in the game scene, add music, add scoring and effects on collison
 - Day 5: Implement the score system Using an API and Deploy the game.
 
 ## Build with

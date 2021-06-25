@@ -1,7 +1,7 @@
-import Phaser from "phaser";
-import gameConfig from "../Config/config";
-import { getscore } from "../helper/localstorage";
-import { updatescore } from "../helper/fetching";
+import Phaser from 'phaser';
+import gameConfig from '../Config/config';
+import { getscore } from '../helper/localstorage';
+import { updatescore } from '../helper/fetching';
 
 let flag = 0;
 
@@ -37,7 +37,7 @@ const gameOptions = {
 
 export default class playGame extends Phaser.Scene {
   constructor() {
-    super("PlayGame");
+    super('PlayGame');
     this.points = 0;
   }
 
@@ -49,7 +49,7 @@ export default class playGame extends Phaser.Scene {
     }
 
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-      this.bgMusic = this.sound.add("ingame", { volume: 0.3, loop: true });
+      this.bgMusic = this.sound.add('ingame', { volume: 0.3, loop: true });
       this.bgMusic.play();
       this.model.bgMusicPlaying = true;
       this.sys.game.globals.bgMusic = this.bgMusic;
@@ -72,10 +72,10 @@ export default class playGame extends Phaser.Scene {
     });
 
     this.pointstext = this.add.text(50, 60, `Score: ${this.points}`, {
-      fontFamily: "FreeMono",
+      fontFamily: 'FreeMono',
       fontSize: 48,
-      fontStyle: "bold",
-      color: "#ffffff",
+      fontStyle: 'bold',
+      color: '#ffffff',
     });
 
     this.coinGroup = this.add.group({
@@ -115,7 +115,7 @@ export default class playGame extends Phaser.Scene {
 
     this.addPlatform(this.game.config.width, this.game.config.width / 2, this.game.config.height * gameOptions.platformVerticalLimit[1]);
 
-    this.player = this.physics.add.sprite(gameOptions.playerStartPosition, this.game.config.height * 0.7, "player");
+    this.player = this.physics.add.sprite(gameOptions.playerStartPosition, this.game.config.height * 0.7, 'player');
     this.player.setGravityY(gameOptions.playerGravity);
     this.player.setDepth(2);
     this.player.setScale(1);
@@ -127,11 +127,11 @@ export default class playGame extends Phaser.Scene {
       this.platformGroup,
       () => {
         if (!this.player.anims.isPlaying) {
-          this.player.anims.play("run");
+          this.player.anims.play('run');
         }
       },
       null,
-      this
+      this,
     );
     this.physics.add.overlap(
       this.player,
@@ -143,7 +143,7 @@ export default class playGame extends Phaser.Scene {
           y: coin.y - 100,
           alpha: 0,
           duration: 800,
-          ease: "Cubic.easeOut",
+          ease: 'Cubic.easeOut',
           callbackScope: this,
           onComplete() {
             this.coinGroup.killAndHide(coin);
@@ -152,7 +152,7 @@ export default class playGame extends Phaser.Scene {
         });
       },
       null,
-      this
+      this,
     );
 
     this.physics.add.overlap(
@@ -166,16 +166,16 @@ export default class playGame extends Phaser.Scene {
         this.physics.world.removeCollider(this.platformCollider);
       },
       null,
-      this
+      this,
     );
 
-    this.input.on("pointerdown", this.jump, this);
+    this.input.on('pointerdown', this.jump, this);
   }
 
   addMountains() {
     const rightmostMountain = this.getRightmostMountain();
     if (rightmostMountain < this.game.config.width * 2) {
-      const mountain = this.physics.add.sprite(rightmostMountain + Phaser.Math.Between(100, 350), this.game.config.height + Phaser.Math.Between(0, 100), "mountain");
+      const mountain = this.physics.add.sprite(rightmostMountain + Phaser.Math.Between(100, 350), this.game.config.height + Phaser.Math.Between(0, 100), 'mountain');
       mountain.setOrigin(0.5, 1);
       mountain.body.setVelocityX(gameOptions.mountainSpeed * -1);
       this.mountainGroup.add(mountain);
@@ -208,7 +208,7 @@ export default class playGame extends Phaser.Scene {
       platform.displayWidth = platformWidth;
       platform.tileScaleX = 1 / platform.scaleX;
     } else {
-      platform = this.add.tileSprite(posX, posY, platformWidth, 32, "platform");
+      platform = this.add.tileSprite(posX, posY, platformWidth, 32, 'platform');
       this.physics.add.existing(platform);
       platform.body.setImmovable(true);
       platform.body.setVelocityX(Phaser.Math.Between(gameOptions.platformSpeedRange[0], gameOptions.platformSpeedRange[1]) * -1);
@@ -228,11 +228,11 @@ export default class playGame extends Phaser.Scene {
           coin.visible = true;
           this.coinPool.remove(coin);
         } else {
-          const coin = this.physics.add.sprite(posX, posY - 46, "coin");
+          const coin = this.physics.add.sprite(posX, posY - 46, 'coin');
           coin.setImmovable(true);
           coin.setScale(3);
           coin.setVelocityX(platform.body.velocity.x);
-          coin.anims.play("rotate");
+          coin.anims.play('rotate');
           coin.setDepth(2);
           this.coinGroup.add(coin);
         }
@@ -248,12 +248,12 @@ export default class playGame extends Phaser.Scene {
           fire.visible = true;
           this.firePool.remove(fire);
         } else {
-          const fire = this.physics.add.sprite(posX - platformWidth / 2 + Phaser.Math.Between(1, platformWidth), posY - 96, "fire");
+          const fire = this.physics.add.sprite(posX - platformWidth / 2 + Phaser.Math.Between(1, platformWidth), posY - 96, 'fire');
           fire.setImmovable(true);
           fire.setScale(1.8);
           fire.setVelocityX(platform.body.velocity.x);
           fire.setSize(8, 2, true);
-          fire.anims.play("burn");
+          fire.anims.play('burn');
           fire.setDepth(2);
           this.fireGroup.add(fire);
         }
@@ -277,10 +277,13 @@ export default class playGame extends Phaser.Scene {
   update() {
     if (this.player.y > this.game.config.height) {
       getscore(this.points);
-      if (localStorage.getItem("highscore") === this.points) updatescore(gameConfig.linker);
+
+      if (parseInt(localStorage.getItem('highscore'), 10) === this.points) {
+        updatescore(gameConfig.linker);
+      }
       this.points = 0;
-      this.pointstext.setText("");
-      this.scene.start("Gameover");
+      this.pointstext.setText('');
+      this.scene.start('Gameover');
     }
 
     this.player.x = gameOptions.playerStartPosition;

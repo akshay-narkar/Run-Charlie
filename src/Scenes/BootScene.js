@@ -7,8 +7,7 @@ export default class BootScene extends Phaser.Scene {
 
   preload() {
     this.load.image('logo', 'assets/mario.png');
-        this.load.image('mount', 'assets/mount2.jpg');
-
+    this.load.image('mount', 'assets/mount2.jpg');
   }
 
   create() {

@@ -5,12 +5,8 @@ export default {
   width: 1280,
   height: 800,
   parent: 'game',
-  //     mode: Phaser.Scale.NONE,
-  // autoCenter: Phaser.Scale.CENTER_BOTH,
-  // scene: playGame,
-  // backgroundColor: 0x87CEEB,
-  // antialias: false,
-  // physics settings
+  linker: 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XI3EIyH9LTNGDjvXNvf5/scores/',
+
   physics: {
     default: 'arcade',
   },

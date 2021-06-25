@@ -38,17 +38,6 @@ An endless runner game built in JavaScript with the Phaser Library, bundled with
 
 ## Getting Started
 
-<!-- Get Api Key
-
-- Go to openweathermap
-- Select free Api key
-- Create an account if you dont have one
-- Copy your new Api Key
-- Go to src/logic.js
-- Create a new file with the name `key.js`
-- Paste the following code & replace `YOUR KEY` text with your api key
-  `const key = 'YOUR KEY'; export default key;` -->
-
 To set up a local copy of the project
 
 - `git clone git@github.com:akshay-narkar/Run-Charlie.git`
@@ -60,10 +49,11 @@ If you want to repack the file
 - Run `npm install` on the terminal to install dependancies
 - Run `npm run build` to bundle the files in the src folder & product ouput in dist folder
 - Run `npm run start` to check live server
+- Run `npm test` to test the functions
 
 ## Live Link of the project
 
-<!-- [Live-Weather-App](https://openweatherappmicro.netlify.app/) -->
+[Run Charlie live](https://runcharlie.netlify.app/)
 
 ## Author
 

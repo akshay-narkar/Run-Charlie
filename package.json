@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "jest": "^27.0.5",
-    "phaser": "^3.55.2"
+    "phaser": "^3.55.2",
+    "sounds-webpack-plugin": "^0.0.2"
   }
 }

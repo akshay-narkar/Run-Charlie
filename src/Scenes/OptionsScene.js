@@ -48,7 +48,9 @@ export default class OptionsScene extends Phaser.Scene {
       this.updateAudio();
     });
 
-    this.menuButton = new Button(this, this.game.config.width / 2, 600, 'playButtongreen', 'Menu', 'Title');
+    this.menuButton = new Button(this, this.game.config.width / 2, 550, 'playButton', 'Change Name', 'Form');
+
+    this.menuButton = new Button(this, this.game.config.width / 2, 650, 'playButtongreen', 'Menu', 'Title');
 
     this.updateAudio();
   }

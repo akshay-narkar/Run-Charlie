@@ -1,5 +1,5 @@
 const path = require('path');
-
+const SoundsPlugin = require('sounds-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
@@ -25,20 +25,19 @@ module.exports = {
           'style-loader',
           'css-loader',
         ],
-        // test: /\.s[ac]ss$/i,
-        // use: [
-        //   // Creates `style` nodes from JS strings
-        //   'style-loader',
-        //   // Translates CSS into CommonJS
-        //   'css-loader',
-        //   // Compiles Sass to CSS
-        //   'sass-loader',
-        // ],
       },
 
       {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader',
+      },
+       
+      {
+        test: /\.(mp3|ogg|wav)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
       },
 
       {
@@ -47,8 +46,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            // presets: ['env']
-            // @babel/preset-env
             presets: [
               '@babel/preset-env',
             ],
@@ -68,6 +65,8 @@ module.exports = {
 
   plugins: [
 
+    new SoundsPlugin(),
+    
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -79,11 +78,6 @@ module.exports = {
           to: path.resolve(__dirname, 'dist'),
         }],
     }),
-
-    //  new webpack.optimize.SplitChunksPlugin({
-    //   name: 'production-dependencies',
-    //   filename: 'production-dependencies.bundle.js'
-    // }),
 
     new webpack.DefinePlugin({
       'typeof CANVAS_RENDERER': JSON.stringify(true),

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack serve --open --mode=development",
-    "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=development"
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,6 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.0.5",
     "babel-loader": "^8.2.2",
-    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",

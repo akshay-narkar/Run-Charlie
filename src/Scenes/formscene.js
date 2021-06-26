@@ -51,9 +51,9 @@ export default class FormScene extends Phaser.Scene {
     this.text = this.add.text(0, 0, 'Submit', { fontSize: '25px', fill: '#fff' });
     Phaser.Display.Align.In.Center(this.text, this.submit);
 
-    if(localStorage.getItem("player")){
-    this.cancel = new Button(this, this.game.config.width / 2, 650, 'playButtongreen', 'Cancel', 'Options');
-  }
+    if (localStorage.getItem('player')) {
+      this.cancel = new Button(this, this.game.config.width / 2, 650, 'playButtongreen', 'Cancel', 'Options');
+    }
 
     this.submit.on('pointerdown', () => {
       if (/[a-z]/i.test(this.input.value)) {

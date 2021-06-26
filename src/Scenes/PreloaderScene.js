@@ -23,20 +23,18 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     this.load.image('playButton', playButton);
-    this.load.image('playButtongreen',playButtongreen );
+    this.load.image('playButtongreen', playButtongreen);
     this.load.image('soundon', soundon);
     this.load.image('soundoff', soundoff);
     this.load.audio('ingame', ingame);
     this.load.audio('highscores', highscores);
     this.load.audio('titlesong', titlesong);
-    
 
     this.add.image(1920, 1080, 'mount');
 
-    let imageload = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
+    const imageload = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
 
     imageload.setScale(0.7);
-
 
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
@@ -113,7 +111,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameHeight: 21,
     });
 
-    this.load.spritesheet('fire',fire, {
+    this.load.spritesheet('fire', fire, {
       frameWidth: 32,
       frameHeight: 32,
     });
@@ -122,13 +120,9 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 512,
       frameHeight: 512,
     });
-
-    
   }
 
   create() {
-     
-   
     this.anims.create({
       key: 'run',
       frames: this.anims.generateFrameNumbers('player', {

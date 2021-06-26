@@ -31,7 +31,7 @@ module.exports = {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader',
       },
-       
+
       {
         test: /\.(mp3|ogg|wav)$/i,
         loader: 'file-loader',
@@ -66,7 +66,7 @@ module.exports = {
   plugins: [
 
     new SoundsPlugin(),
-    
+
     new CopyWebpackPlugin({
       patterns: [
         {

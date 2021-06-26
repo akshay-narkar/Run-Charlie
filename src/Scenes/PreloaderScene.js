@@ -102,14 +102,9 @@ export default class PreloaderScene extends Phaser.Scene {
     });
 
     this.load.image('playButton', './assets/ui/blue_button.png');
-
     this.load.image('playButtongreen', './assets/ui/button.png');
     this.load.image('soundon', './assets/ui/sound.png');
-
     this.load.image('soundoff', './assets/ui/nosound.png');
-    this.load.image('phaserLogo', './assets/logo.png');
-    this.load.image('box', './assets/ui/grey_box.png');
-    this.load.image('checkedBox', './assets/ui/blue_boxCheckmark.png');
     this.load.audio('ingame', ['./assets/them1.ogg']);
     this.load.audio('highscores', ['./assets/WindRun.mp3']);
     this.load.audio('titlesong', ['./assets/titleandgamover.mp3']);

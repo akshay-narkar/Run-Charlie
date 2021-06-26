@@ -54,10 +54,11 @@ module.exports = {
       },
 
       {
-
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-
-        type: 'asset/resource',
+         test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
 
       },
     ],
@@ -72,11 +73,8 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'index.html'),
           to: path.resolve(__dirname, 'dist'),
-        },
-        {
-          from: path.resolve(__dirname, 'assets', '**', '*'),
-          to: path.resolve(__dirname, 'dist'),
-        }],
+        }
+       ]
     }),
 
     new webpack.DefinePlugin({

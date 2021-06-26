@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack serve --open ",
-    "watch": "webpack --watch",
-    "build": "webpack"
+    "start": "webpack serve --open --mode=development",
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "jest": "^27.0.5",
     "phaser": "^3.55.2",
     "sounds-webpack-plugin": "^0.0.2"

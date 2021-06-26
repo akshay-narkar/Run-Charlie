@@ -25,19 +25,20 @@ export default class TitleScene extends Phaser.Scene {
 
     this.highscoreButton = new Button(this, config.width / 2, config.height / 2 + 200, 'playButton', 'High Scores', 'highscore');
 
-    this.model = this.sys.game.globals.model;
-    if (this.model.bgMusicPlaying) {
-      this.sys.game.globals.bgMusic.stop();
-      this.model.bgMusicPlaying = false;
-    }
+    // this.model = this.sys.game.globals.model;
+    // if (this.model.bgMusicPlaying) {
+    //   this.sys.game.globals.bgMusic.stop();
+    //   this.model.bgMusicPlaying = false;
+    // }
 
-    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-      this.bgMusic = this.sound.add('highscores', { volume: 0.3, loop: true });
-      this.bgMusic.play();
-      this.model.bgMusicPlaying = true;
-      this.sys.game.globals.bgMusic = this.bgMusic;
-    }
+    // if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+    //   this.bgMusic = this.sound.add('highscores', { volume: 0.3, loop: true });
+    //   this.bgMusic.play();
+    //   this.model.bgMusicPlaying = true;
+    //   this.sys.game.globals.bgMusic = this.bgMusic;
+    // }
   }
+
   /* eslint max-len: 0 */
 
   centerButton(gameObject, offset = 0) {

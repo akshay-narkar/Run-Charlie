@@ -1,5 +1,4 @@
 const path = require('path');
-const SoundsPlugin = require('sounds-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -65,7 +64,6 @@ module.exports = {
 
   plugins: [
 
-    new SoundsPlugin(),
 
     new webpack.DefinePlugin({
       'typeof CANVAS_RENDERER': JSON.stringify(true),

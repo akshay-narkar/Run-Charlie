@@ -8,9 +8,9 @@ import playButton from '../../assets/ui/blue_button.png';
 import playButtongreen from '../../assets/ui/button.png';
 import soundon from '../../assets/ui/sound.png';
 import soundoff from '../../assets/ui/nosound.png';
-import ingame from '../../assets/them1.ogg';
-import highscores from '../../assets/WindRun.mp3';
-import titlesong from '../../assets/titleandgamover.mp3';
+// import ingame from '../../assets/them1.ogg';
+// import highscores from '../../assets/WindRun.mp3';
+// import titlesong from '../../assets/titleandgamover.mp3';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -26,9 +26,9 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('playButtongreen', playButtongreen);
     this.load.image('soundon', soundon);
     this.load.image('soundoff', soundoff);
-    this.load.audio('ingame', ingame);
-    this.load.audio('highscores', highscores);
-    this.load.audio('titlesong', titlesong);
+    // this.load.audio('ingame', ingame);
+    // this.load.audio('highscores', highscores);
+    // this.load.audio('titlesong', titlesong);
 
     this.add.image(1920, 1080, 'mount');
 

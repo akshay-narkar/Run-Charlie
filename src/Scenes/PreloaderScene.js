@@ -1,4 +1,16 @@
 import Phaser from 'phaser';
+import player from '../../assets/bunny.png';
+import coin from '../../assets/carrot.png';
+import fire from '../../assets/32x32-bat-sprite.png';
+import platform from '../../assets/platform.png';
+import mountain from '../../assets/mountain.png';
+import playButton from '../../assets/ui/blue_button.png';
+import playButtongreen from '../../assets/ui/button.png';
+import soundon from '../../assets/ui/sound.png';
+import soundoff from '../../assets/ui/nosound.png';
+import ingame from '../../assets/them1.ogg';
+import highscores from '../../assets/WindRun.mp3';
+import titlesong from '../../assets/titleandgamover.mp3';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -10,11 +22,21 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
+    this.load.image('playButton', playButton);
+    this.load.image('playButtongreen',playButtongreen );
+    this.load.image('soundon', soundon);
+    this.load.image('soundoff', soundoff);
+    this.load.audio('ingame', ingame);
+    this.load.audio('highscores', highscores);
+    this.load.audio('titlesong', titlesong);
+    
+
     this.add.image(1920, 1080, 'mount');
 
-    const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
+    let imageload = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
 
-    logo.setScale(0.7);
+    imageload.setScale(0.7);
+
 
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
@@ -79,38 +101,34 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    this.load.image('platform', './assets/platform.png');
+    this.load.image('platform', platform);
 
-    this.load.spritesheet('player', './assets/bunny.png', {
+    this.load.spritesheet('player', player, {
       frameWidth: 48,
       frameHeight: 32,
     });
 
-    this.load.spritesheet('coin', './assets/carrot.png', {
+    this.load.spritesheet('coin', coin, {
       frameWidth: 14.3333,
       frameHeight: 21,
     });
 
-    this.load.spritesheet('fire', './assets/32x32-bat-sprite.png', {
+    this.load.spritesheet('fire',fire, {
       frameWidth: 32,
       frameHeight: 32,
     });
 
-    this.load.spritesheet('mountain', './assets/mountain.png', {
+    this.load.spritesheet('mountain', mountain, {
       frameWidth: 512,
       frameHeight: 512,
     });
 
-    this.load.image('playButton', './assets/ui/blue_button.png');
-    this.load.image('playButtongreen', './assets/ui/button.png');
-    this.load.image('soundon', './assets/ui/sound.png');
-    this.load.image('soundoff', './assets/ui/nosound.png');
-    this.load.audio('ingame', ['./assets/them1.ogg']);
-    this.load.audio('highscores', ['./assets/WindRun.mp3']);
-    this.load.audio('titlesong', ['./assets/titleandgamover.mp3']);
+    
   }
 
   create() {
+     
+   
     this.anims.create({
       key: 'run',
       frames: this.anims.generateFrameNumbers('player', {

@@ -1,65 +1,71 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Run Charlie
 
-# Project Name
+An endless runner game built in JavaScript with the Phaser Library, bundled with Webpack and transpilied with Babel.
 
-> One paragraph statement about the project.
+## Run Charlie screenshot
 
-![screenshot](./app_screenshot.png)
+### Main Menu
 
-Additional description about the project and its features.
+<img src="./assets/menu.png"/>
+
+### In Game
+
+<img src="./assets/charlie.png"/>
+
+#### [Game Design Document](./GDD.md)
+
+## Instructions
+
+- Play with the Mouse Click:
+
+- MOUSE KEY/TOUCH PAD CLICK TO JUMP
+
+- Press multiple times (maximum 3) to make a triple jump.
+
+- Jumps exhaust when 3 jumps are done and you haven't touched the platform
+
+- On touching the platform, the jumps are replenished.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- HTML
+- JAVASCRIPT
+- PHASER 3
+- NPM
+- WEBPACK
+- Babel
+- JEST
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To set up a local copy of the project
 
+- `git clone git@github.com:akshay-narkar/Run-Charlie.git`
+- `cd Run-Charlie`
+- `git pull origin gamelogic`
 
-To get a local copy up and running follow these simple example steps.
+If you want to repack the file
 
-### Prerequisites
+- Run `npm install` on the terminal to install dependancies
+- Run `npm run build` to bundle the files in the src folder & product ouput in dist folder
+- Run `npm run start` to check live server
+- Run `npm test` to test the functions
 
-### Setup
+## Live Link of the project
 
-### Install
+[Run Charlie live](https://runcharlie.netlify.app/)
 
-### Usage
+## Author
 
-### Run tests
+👤 **Akshay Narkar**
 
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [@akshay-narkar](https://github.com/akshay-narkar)
+- Twitter: [Akshay](https://www.twitter.com/akidoit)
+- Linkedin: [Akshay Narkar](https://www.linkedin.com/in/akshaynarkar25/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -67,10 +73,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Open Game Art](http://opengameart.org/)
+- [upklyak](https://www.freepik.com/free-photos-vectors/leaf)
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](LICENSE) licensed.

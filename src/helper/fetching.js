@@ -1,4 +1,4 @@
-const getData = async (url) => {
+export const getData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -13,13 +13,13 @@ export const sortPlayers = (arr) => {
   return arr;
 };
 
-const getPlayers = async (url) => {
+export const getPlayers = async (url) => {
   const arr = await getData(url);
-  sortPlayers(arr);
+  if (typeof (arr) === 'object') sortPlayers(arr);
   return arr;
 };
 
-const updatescore = async (url) => {
+export const updatescore = async (url) => {
   try {
     const response = await fetch(url, {
       method: 'POST',
@@ -35,5 +35,3 @@ const updatescore = async (url) => {
     return error;
   }
 };
-
-export { getData, getPlayers, updatescore };

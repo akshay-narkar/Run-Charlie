@@ -35,44 +35,42 @@ export default class OptionsScene extends Phaser.Scene {
 
     this.musicButton.setInteractive();
     this.soundButton.setInteractive();
-    // this.model = this.sys.game.globals.model;
+    this.model = this.sys.game.globals.model;
 
+    this.musicButton.on('pointerdown', () => {
+      this.model.musicOn = !this.model.musicOn;
+      this.updateAudio();
+    });
 
-    // this.musicButton.on('pointerdown', () => {
-    //   this.model.musicOn = !this.model.musicOn;
-    //   this.updateAudio();
-    // });
-
-
-    // this.soundButton.on('pointerdown', () => {
-    //   this.model.soundOn = !this.model.soundOn;
-    //   this.updateAudio();
-    // });
+    this.soundButton.on('pointerdown', () => {
+      this.model.soundOn = !this.model.soundOn;
+      this.updateAudio();
+    });
 
     this.menuButton = new Button(this, this.game.config.width / 2, 550, 'playButton', 'Change Name', 'Form');
 
     this.menuButton = new Button(this, this.game.config.width / 2, 650, 'playButtongreen', 'Menu', 'Title');
 
-    // this.updateAudio();
+    this.updateAudio();
   }
 
-  // updateAudio() {
-  //   if (this.model.musicOn === false) {
-  //     this.musicButton.setTexture('soundoff');
-  //     this.sys.game.globals.bgMusic.stop();
-  //     this.model.bgMusicPlaying = false;
-  //   } else {
-  //     this.musicButton.setTexture('soundon');
-  //     if (this.model.bgMusicPlaying === false) {
-  //       this.sys.game.globals.bgMusic.play();
-  //       this.model.bgMusicPlaying = true;
-  //     }
-  //   }
+  updateAudio() {
+    if (this.model.musicOn === false) {
+      this.musicButton.setTexture('soundoff');
+      this.sys.game.globals.bgMusic.stop();
+      this.model.bgMusicPlaying = false;
+    } else {
+      this.musicButton.setTexture('soundon');
+      if (this.model.bgMusicPlaying === false) {
+        this.sys.game.globals.bgMusic.play();
+        this.model.bgMusicPlaying = true;
+      }
+    }
 
-  //   if (this.model.soundOn === false) {
-  //     this.soundButton.setTexture('soundoff');
-  //   } else {
-  //     this.soundButton.setTexture('soundon');
-  //   }
-  // }
+    if (this.model.soundOn === false) {
+      this.soundButton.setTexture('soundoff');
+    } else {
+      this.soundButton.setTexture('soundon');
+    }
+  }
 }

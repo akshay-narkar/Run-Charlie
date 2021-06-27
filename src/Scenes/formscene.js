@@ -17,13 +17,13 @@ export default class FormScene extends Phaser.Scene {
       color: '#ffffff',
     });
 
-    // this.model = this.sys.game.globals.model;
-    // if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-    //   this.bgMusic = this.sound.add('titlesong', { volume: 0.3, loop: true });
-    //   this.bgMusic.play();
-    //   this.model.bgMusicPlaying = true;
-    //   this.sys.game.globals.bgMusic = this.bgMusic;
-    // }
+    this.model = this.sys.game.globals.model;
+    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+      this.bgMusic = this.sound.add('titlesong', { volume: 0.3, loop: true });
+      this.bgMusic.play();
+      this.model.bgMusicPlaying = true;
+      this.sys.game.globals.bgMusic = this.bgMusic;
+    }
 
     this.message = this.add.text(this.game.config.width * 0.5, 228, 'Input Player Name', {
       fontFamily: 'monospace',

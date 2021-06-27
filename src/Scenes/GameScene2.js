@@ -42,18 +42,18 @@ export default class playGame extends Phaser.Scene {
   }
 
   create() {
-    // this.model = this.sys.game.globals.model;
-    // if (this.model.bgMusicPlaying) {
-    //   this.sys.game.globals.bgMusic.stop();
-    //   this.model.bgMusicPlaying = false;
-    // }
+    this.model = this.sys.game.globals.model;
+    if (this.model.bgMusicPlaying) {
+      this.sys.game.globals.bgMusic.stop();
+      this.model.bgMusicPlaying = false;
+    }
 
-    // if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-    //   this.bgMusic = this.sound.add('ingame', { volume: 0.3, loop: true });
-    //   this.bgMusic.play();
-    //   this.model.bgMusicPlaying = true;
-    //   this.sys.game.globals.bgMusic = this.bgMusic;
-    // }
+    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+      this.bgMusic = this.sound.add('ingame', { volume: 0.3, loop: true });
+      this.bgMusic.play();
+      this.model.bgMusicPlaying = true;
+      this.sys.game.globals.bgMusic = this.bgMusic;
+    }
 
     this.cameras.main.setBackgroundColor(0x0c88c7);
 

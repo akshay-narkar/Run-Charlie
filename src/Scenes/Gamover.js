@@ -7,7 +7,7 @@ export default class OverGame extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(1920, 1080, 'mount');
+    this.add.image(500, 400, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 75, 'Game Over', {
       fontFamily: 'FreeMono',

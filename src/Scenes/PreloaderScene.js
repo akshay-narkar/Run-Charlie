@@ -26,7 +26,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('highscores', highscores);
     this.load.audio('titlesong', titlesong);
 
-    this.add.image(1920, 1080, 'mount');
+    this.add.image(400, 580, 'mount');
 
     const imageload = this.add.image(this.game.config.width / 2, this.game.config.height / 2 - 200, 'logo');
 
@@ -115,7 +115,9 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 512,
       frameHeight: 512,
     });
+  }
 
+  create() {
     this.anims.create({
       key: 'run',
       frames: this.anims.generateFrameNumbers('player', {
@@ -146,9 +148,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameRate: 15,
       repeat: -1,
     });
-  }
 
-  create() {
     if (localStorage.getItem('player')) {
       this.scene.start('Title');
     } else {

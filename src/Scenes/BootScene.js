@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import logo from '../../assets/mario.png';
-import mount from '../../assets/mount2.jpg';
+import mount from '../../assets/videoscene.jpg';
 
 export default class BootScene extends Phaser.Scene {
   constructor() {

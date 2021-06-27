@@ -9,7 +9,7 @@ export default class highscore extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(780, 1080, 'mount');
+    this.add.image(400, 300, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 25, 'LeaderBoard', {
       fontFamily: 'FreeMono',
@@ -50,7 +50,7 @@ export default class highscore extends Phaser.Scene {
             fontFamily: 'monospace',
             fontSize: 30,
             fontStyle: 'bold',
-            color: '#000',
+            color: '#ffffff',
             align: 'center',
           });
           text.setOrigin(0.5, 0.5);

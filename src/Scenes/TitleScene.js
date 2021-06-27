@@ -8,7 +8,7 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(1920, 1080, 'mount');
+    this.add.image(0, 0, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 128, 'Run Charlie!', {
       fontFamily: 'FreeMono',

@@ -7,13 +7,13 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(780, 1080, 'mount');
+    this.add.image(300, 80, 'mount');
 
     this.text = this.add.text(this.game.config.width / 2 - 125, 100, 'Options', {
       fontSize: 60,
       fontFamily: 'FreeMono',
       fontStyle: 'bold',
-      color: '#000',
+      color: '#fff',
     });
     this.musicButton = this.add.image(this.game.config.width / 2 - 150, 300, 'soundon');
     this.musicButton.setScale(0.8);
@@ -21,7 +21,7 @@ export default class OptionsScene extends Phaser.Scene {
       fontSize: 40,
       fontFamily: 'FreeMono',
       fontStyle: 'bold',
-      color: '#000',
+      color: '#fff',
     });
 
     this.soundButton = this.add.image(this.game.config.width / 2 - 150, 400, 'soundon');
@@ -29,7 +29,7 @@ export default class OptionsScene extends Phaser.Scene {
       fontSize: 40,
       fontFamily: 'FreeMono',
       fontStyle: 'bold',
-      color: '#000',
+      color: '#fff',
     });
     this.soundButton.setScale(0.8);
 

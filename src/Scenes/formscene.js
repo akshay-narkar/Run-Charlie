@@ -8,7 +8,7 @@ export default class FormScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(2500, 1080, 'mount');
+    this.add.image(400, 300, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 128, 'Run Charlie!', {
       fontFamily: 'FreeMono',
@@ -46,9 +46,10 @@ export default class FormScene extends Phaser.Scene {
 
     this.nameInput = this.add.sprite(this.game.config.width / 2, 350, 'playButton');
     Phaser.Display.Align.In.Center(this.input, this.nameInput);
+    
     this.submit = this.add.image(this.game.config.width / 2, 428, 'playButton').setInteractive();
     this.submit.scale = 0.7;
-    this.text = this.add.text(0, 0, 'Submit', { fontSize: '25px', fill: '#fff' });
+    this.text = this.add.text(0, 0, 'Submit', { fontSize: '25px', fill: '#fff',fontFamily: 'monospace' });
     Phaser.Display.Align.In.Center(this.text, this.submit);
 
     if (localStorage.getItem('player')) {

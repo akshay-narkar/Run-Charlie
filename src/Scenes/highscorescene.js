@@ -18,18 +18,18 @@ export default class highscore extends Phaser.Scene {
       color: '#ffffff',
     });
 
-    // this.model = this.sys.game.globals.model;
-    // if (this.model.bgMusicPlaying) {
-    //   this.sys.game.globals.bgMusic.stop();
-    //   this.model.bgMusicPlaying = false;
-    // }
+    this.model = this.sys.game.globals.model;
+    if (this.model.bgMusicPlaying) {
+      this.sys.game.globals.bgMusic.stop();
+      this.model.bgMusicPlaying = false;
+    }
 
-    // if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-    //   this.bgMusic = this.sound.add('titlesong', { volume: 0.3, loop: true });
-    //   this.bgMusic.play();
-    //   this.model.bgMusicPlaying = true;
-    //   this.sys.game.globals.bgMusic = this.bgMusic;
-    // }
+    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+      this.bgMusic = this.sound.add('titlesong', { volume: 0.3, loop: true });
+      this.bgMusic.play();
+      this.model.bgMusicPlaying = true;
+      this.sys.game.globals.bgMusic = this.bgMusic;
+    }
 
     this.menuButton = new Button(this, this.game.config.width / 2, 750, 'playButtongreen', 'Menu', 'Title');
 

@@ -37,18 +37,18 @@ export default class OverGame extends Phaser.Scene {
       color: '#ffffff',
     });
 
-    // this.model = this.sys.game.globals.model;
-    // if (this.model.bgMusicPlaying) {
-    //   this.sys.game.globals.bgMusic.stop();
-    //   this.model.bgMusicPlaying = false;
-    // }
+    this.model = this.sys.game.globals.model;
+    if (this.model.bgMusicPlaying) {
+      this.sys.game.globals.bgMusic.stop();
+      this.model.bgMusicPlaying = false;
+    }
 
-    // if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-    //   this.bgMusic = this.sound.add('highscores', { volume: 0.3, loop: true });
-    //   this.bgMusic.play();
-    //   this.model.bgMusicPlaying = true;
-    //   this.sys.game.globals.bgMusic = this.bgMusic;
-    // }
+    if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
+      this.bgMusic = this.sound.add('highscores', { volume: 0.3, loop: true });
+      this.bgMusic.play();
+      this.model.bgMusicPlaying = true;
+      this.sys.game.globals.bgMusic = this.bgMusic;
+    }
 
     this.menuButton = new Button(this, this.game.config.width / 2, 720, 'playButtongreen', 'Menu', 'Title');
     this.playagain = new Button(this, this.game.config.width / 2, 620, 'playButtongreen', 'Play Again', 'PlayGame');

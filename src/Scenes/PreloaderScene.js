@@ -17,10 +17,6 @@ export default class PreloaderScene extends Phaser.Scene {
     super('Preloader');
   }
 
-  init() {
-    this.readyCount = 0;
-  }
-
   preload() {
     this.load.image('playButton', playButton);
     this.load.image('playButtongreen', playButtongreen);
@@ -94,7 +90,6 @@ export default class PreloaderScene extends Phaser.Scene {
       loadingText.destroy();
       percentText.destroy();
       assetText.destroy();
-      this.ready();
     });
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
@@ -120,9 +115,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 512,
       frameHeight: 512,
     });
-  }
 
-  create() {
     this.anims.create({
       key: 'run',
       frames: this.anims.generateFrameNumbers('player', {
@@ -155,13 +148,9 @@ export default class PreloaderScene extends Phaser.Scene {
     });
   }
 
-  ready() {
+  create() {
     if (localStorage.getItem('player')) {
       this.scene.start('Title');
-      this.readyCount += 1;
-      if (this.readyCount === 2) {
-        this.scene.start('Title');
-      }
     } else {
       this.scene.start('Form');
     }

@@ -25,7 +25,7 @@ export default class highscore extends Phaser.Scene {
     }
 
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
-      this.bgMusic = this.sound.add('titlesong', { volume: 0.3, loop: true });
+      this.bgMusic = this.sound.add('highscores', { volume: 0.3, loop: true });
       this.bgMusic.play();
       this.model.bgMusicPlaying = true;
       this.sys.game.globals.bgMusic = this.bgMusic;

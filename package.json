@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack serve --open",
+    "start": "webpack serve --open --mode=development",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack --mode=development"
   },
   "repository": {
     "type": "git",

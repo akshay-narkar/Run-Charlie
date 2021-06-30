@@ -7,6 +7,7 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.zoom = 1;
     this.add.image(300, 80, 'mount');
 
     this.text = this.add.text(this.game.config.width / 2 - 125, 100, 'Options', {

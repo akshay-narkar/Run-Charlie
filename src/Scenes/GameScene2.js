@@ -4,6 +4,7 @@ import { getscore } from '../helper/localstorage';
 import { updatescore } from '../helper/fetching';
 
 let flag = 0;
+let counter = 1;
 
 const gameOptions = {
   platformSpeedRange: [300, 300],
@@ -42,6 +43,7 @@ export default class playGame extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.zoom = 1;
     this.model = this.sys.game.globals.model;
     if (this.model.bgMusicPlaying) {
       this.sys.game.globals.bgMusic.stop();
@@ -82,9 +84,12 @@ export default class playGame extends Phaser.Scene {
       removeCallback: (coin) => {
         coin.scene.coinPool.add(coin);
         if (flag === 1) {
-          this.points += 25;
+          // if (this.model.soundOn === true) {
+          //       this.bgSound = this.sound.add('coin', { volume: 1 });
+          //       this.bgSound.play();
+          // }
           flag = 0;
-          this.pointstext.setText(`Score: ${this.points}`);
+          counter = 1;
         }
       },
     });
@@ -138,6 +143,16 @@ export default class playGame extends Phaser.Scene {
       this.coinGroup,
       (player, coin) => {
         flag = 1;
+        if (counter > 0) {
+          this.points += 25;
+
+          this.pointstext.setText(`Score: ${this.points}`);
+          if (this.model.soundOn === true) {
+            this.bgSound = this.sound.add('coin', { volume: 1 });
+            this.bgSound.play();
+          }
+          counter -= 1;
+        }
         this.tweens.add({
           targets: coin,
           y: coin.y - 100,

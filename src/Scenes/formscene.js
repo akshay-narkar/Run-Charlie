@@ -40,7 +40,15 @@ export default class FormScene extends Phaser.Scene {
     const canvas1 = document.querySelector('canvas');
 
     this.input = this.body.appendChild(document.createElement('input'));
-    this.add.dom(canvas1.clientWidth / 2, canvas1.clientHeight / 2, this.input);
+
+
+    const adddom = () => {
+      this.add.dom(canvas1.clientWidth / 2, canvas1.clientHeight / 2, this.input);
+    };
+        window.addEventListener('resize', adddom, false);
+
+    adddom();
+
     this.input.setAttribute('id', 'myText');
     this.input.setAttribute('type', 'text');
 

@@ -8,6 +8,7 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.zoom = 1;
     this.add.image(0, 0, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 128, 'Run Charlie!', {

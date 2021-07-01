@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheet.css';
 import gameConfig from './Config/config';
 import playGame from './Scenes/GameScene2';

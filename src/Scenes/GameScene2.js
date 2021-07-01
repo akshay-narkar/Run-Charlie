@@ -43,7 +43,9 @@ export default class playGame extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.zoom = 1;
+    
+    
+    this.cameras.main.zoom = 0.9;
     this.model = this.sys.game.globals.model;
     if (this.model.bgMusicPlaying) {
       this.sys.game.globals.bgMusic.stop();

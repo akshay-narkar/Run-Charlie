@@ -8,8 +8,11 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.zoom = 1;
-    this.add.image(0, 0, 'mount');
+  
+   
+
+    // if (window.devicePixelRatio > 1) this.cameras.main.zoom = 0.9;
+    this.add.image(300, 80, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 128, 'Run Charlie!', {
       fontFamily: 'FreeMono',

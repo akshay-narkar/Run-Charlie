@@ -6,19 +6,28 @@ body {
 
 #myText {
   font-family: "monospace", sans-serif;
-  display: block;
-  margin: auto;
-  position: relative;
-  top: -57px;
+  /* display: block; */
+  /* margin: auto; */
+  /* position: relative; */
+  /* top: -57px; */
   text-align: center;
   background-color: #fff;
   font-size: 18px;
   font-weight: 700;
-  left: -11px;
+  /* left: -11px; */
 }
 
-#game {
+/* #game {
   width: 100%;
   margin: auto;
+  position: absolute; */
+/* } */
+
+canvas {
+  display: block;
+  margin: 0;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

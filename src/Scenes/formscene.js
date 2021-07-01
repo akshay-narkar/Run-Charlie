@@ -37,17 +37,52 @@ export default class FormScene extends Phaser.Scene {
 
     this.body = document.querySelector('body');
 
-    const canvas1 = document.querySelector('canvas');
-
+    let canvaswidth;
+    let canvasheight;
     this.input = this.body.appendChild(document.createElement('input'));
-
+  
 
     const adddom = () => {
-      this.add.dom(canvas1.clientWidth / 2, canvas1.clientHeight / 2, this.input);
+ 
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+    let windowRatio = windowWidth / windowHeight;
+    let gameRatio = game.config.width / game.config.height;
+    if(windowRatio < gameRatio){
+      console.log("blah1")
+        canvaswidth = windowWidth
+        canvasheight = (windowWidth / gameRatio)
+      this.input1 = this.add.dom(canvaswidth/2,windowHeight/2-44,this.input );
+      console.log(canvaswidth)
+      console.log(canvasheight)
+            this.input.style.width = canvaswidth*.2; 
+
+        // canvas.style.width = windowWidth + "px";
+        // canvas.style.height = (windowWidth / gameRatio) + "px";
+    }
+    else{
+        console.log("blah")
+
+        canvaswidth = windowHeight * gameRatio ;
+        canvasheight = windowHeight ;
+        this.input1 = this.add.dom(windowWidth/2 - 45, canvasheight/2 - 60,this.input );
+      //   console.log(canvaswidth)
+      // console.log(canvasheight)
+      //       console.log(window.screen.width)
+      //        console.log(window.screen.height)
+      //     console.log(gameRatio);
+      //     console.log(windowRatio)
+            this.input.style.width = canvaswidth*.2; 
+    }
+
+    
+      this.input1.setDepth(100);
+    
     };
         window.addEventListener('resize', adddom, false);
 
     adddom();
+
 
     this.input.setAttribute('id', 'myText');
     this.input.setAttribute('type', 'text');

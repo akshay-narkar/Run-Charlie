@@ -7,6 +7,8 @@ export default class OverGame extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.zoom = 0.5;
+
     this.add.image(500, 400, 'mount');
 
     this.add.text(this.game.config.width / 2 - 175, 75, 'Game Over', {
